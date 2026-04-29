@@ -23,20 +23,26 @@ they are ready to navigate complexity, think critically, and drive meaningful
 change in their communities and beyond.
 """
 
-# Make a dictionary where the keys are all the unique words in the string
-# (Hint: use the `.split()` method to get a list of all the words) and the
-# values are the number of times each word appears. Print the dicitonary.
 
 # 1. Remove all new lines and punctuation, and convert to all lowercase.
-#### YOUR CODE HERE
+import string
+text = text.replace("\n", " ").lower()
+for p in string.punctuation:
+    text = text.replace(p, "")
 
 # 2. Use the `.split()` method to split into a list of words.
-#### YOUR CODE HERE
+words = text.split()
 
 # 3. Initialize an empty dictionary to keep track of word counts.
-#### YOUR CODE HERE
+word_counts = {}
 
 # 4. loop through the list of words and update the dictionary. If the word is
 # already a key in the dicitonary, increment the count. If not, add the new key
 # with a count of 1.
-#### YOUR CODE HERE
+for word in words:
+    if word in word_counts:
+        word_counts[word] += 1
+    else:
+        word_counts[word] = 1
+
+print(word_counts)
